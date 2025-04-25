@@ -1,0 +1,29 @@
+@startuml
+actor "Пользователь" as User
+
+rectangle "ЯПлакалъ - yaplakal.com" {
+  usecase "Просмотр главной страницы" as UC1
+  usecase "Прокрутка для загрузки контента" as UC2
+  usecase "Просмотр комментариев" as UC3
+  usecase "Авторизация" as UC4
+  usecase "Вход с валидными данными" as UC5
+  usecase "Вход с невалидными данными" as UC6
+  usecase "Регистрация" as UC7
+  usecase "Поиск по сайту" as UC8
+  usecase "Поиск с результатами" as UC9
+  usecase "Поиск без результатов" as UC10
+}
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC7
+User --> UC8
+
+UC4 <|-- UC5
+UC4 <|-- UC6
+UC8 <|-- UC9
+UC8 <|-- UC10
+
+@enduml 
